@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
+import CourseCard from "./CourseCard";
 import TopNavBar from "./TopNavBar";
 
-export{Navbar,TopNavBar}
+export{CourseCard,TopNavBar}
 //
