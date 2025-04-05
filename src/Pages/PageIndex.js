@@ -6,5 +6,7 @@ import PreAssessmentTest from "./PreAssessmentTest"
 import DashboardScreen from "./Dashboardscreen"
 import SubContent from "./SubContent"
 
+import ModuleLearningdata from "./ModuleLearningdata"
+
 import Studentprofile from "./Studentprofile"
-export {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent}
+export {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,ModuleLearningdata}

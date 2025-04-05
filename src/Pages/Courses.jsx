@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import CourseCard from '../Components/CourseCard'; // Ensure the path is correct
 import axios from 'axios'; // Import axios for API calls
-
+import LandingPage from '../Components/LandingPage';
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate(); // Initialize useNavigate
@@ -27,6 +27,7 @@ const Courses = () => {
     console.log("Navigating to subject ID:", courses._id); // Debug log
     navigate('/subcontent', { state: { subjectId: course._id } }); // Pass the subject ID
   };
+  
 
   return (
     <div className="bg-gray-100 min-h-screen">
