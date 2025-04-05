@@ -59,15 +59,6 @@ console.log("student id coming",studentid)
     fetchProfile();
   }, [studentid]);
   
-
-
-
-
-  
-   
-  
-
-  
   
     
 

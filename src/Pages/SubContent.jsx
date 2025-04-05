@@ -20,7 +20,7 @@ const SubContent = () => {
         }
   
         try {
-          const response = await axios.get(`https://devclash-backend.onrender.com/api/module/${subjectId}/grade 6`); // Adjust the URL as needed
+          const response = await axios.get(`https://devclash-backend.onrender.com/api/module/${subjectId}/${className}`); // Adjust the URL as needed
           setModuleData(response.data);
         } catch (error) {
           console.error('Error fetching module data:', error);
