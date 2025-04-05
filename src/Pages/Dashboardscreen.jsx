@@ -8,6 +8,8 @@ import {
 import { Sparkles, CheckCircle, XCircle } from 'lucide-react';
 import { subjects } from './data';
 
+
+
 // SubjectCard Component
 const SubjectCard = ({ subject }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -15,6 +17,8 @@ const SubjectCard = ({ subject }) => {
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
+
+ 
 
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">

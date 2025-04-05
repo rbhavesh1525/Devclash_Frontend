@@ -2,8 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes
 import { motion } from 'framer-motion';
 
+<<<<<<< HEAD
+
+
+
+const CourseCard = ({ title, description, thumbnail, onClick }) => {
+
+ 
+=======
 const CourseCard = ({ title, description, thumbnail, onLearnMore, onPreAssessment }) => {
+>>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
   return (
+    <section id="courses">
     <motion.div
       className="bg-white rounded-2xl shadow-lg transition-all relative overflow-hidden flex flex-col"
       whileHover={{ scale: 1.02 }}
@@ -28,6 +38,7 @@ const CourseCard = ({ title, description, thumbnail, onLearnMore, onPreAssessmen
         </button>
       </div>
     </motion.div>
+    </section>
   );
 };
 
