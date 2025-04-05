@@ -1,4 +1,4 @@
-
+  
 import './App.css'
 import {Homepage} from "./Pages/PageIndex"
 import {Navbar} from "./Components/CompIndex"
