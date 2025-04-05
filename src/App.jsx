@@ -1,6 +1,6 @@
 
 import './App.css'
-import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest} from "./Pages/PageIndex"
+import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest,LeaderBoard} from "./Pages/PageIndex"
 import {TopNavBar} from "./Components/CompIndex"
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
@@ -30,11 +30,9 @@ function App() {
       <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
       <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /></>} />
       <Route path="/subcontent" element={<><TopNavBar/><SubContent /></>} />
-<<<<<<< HEAD
       <Route path="/practisetest" element={<><TopNavBar/><PractiseTest /></>} />
-=======
       <Route path='/weeklytest' element={<><TopNavBar/><WeeklyTest/></>}/>
->>>>>>> 6b53a60de6e01266fe8eaa4c6681e58956839c34
+      <Route path='/leaderboard' element={<><TopNavBar/><LeaderBoard/></>}/>
       
     
     </Routes>
