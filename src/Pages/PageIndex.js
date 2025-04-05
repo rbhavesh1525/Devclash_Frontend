@@ -1,6 +1,8 @@
-import Homepage from "./Homepage"
+
 import UserSignup from "./UserSignup"
 import UserSignin from "./UserSignin"
+import Courses from "./Courses"
+import PreAssessmentTest from "./PreAssessmentTest"
 
 import Studentprofile from "./Studentprofile"
-export {Homepage,Studentprofile,UserSignin,UserSignup}
+export {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest}
