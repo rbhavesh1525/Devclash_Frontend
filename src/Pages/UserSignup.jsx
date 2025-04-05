@@ -8,9 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 function UserSignup() { 
   const [ iserror,setIsError ] = useState("");
   const [signupData, setSignupData] = useState({
-    firstName: "",
-    lastName: "",
-    
+    firstname: "",
+    lastname: "",
+    phone:"",
     email: "",
     password: "",
   });
@@ -20,7 +20,7 @@ function UserSignup() {
     setIsError("");
     
     try {
-      const response = await axios.post("https://devclash-backend.onrender.com/api/auth/user-signup", signupData);
+      const response = await axios.post("https://devclash-backend.onrender.com/api/register", signupData);
       console.log("Signup successful:", response.data);
       showToast("🎉 Signup Successful!", "success");
       
@@ -54,16 +54,25 @@ function UserSignup() {
           <input
             type="text"
             placeholder="First Name"
-            name="firstName"
-            value={signupData.firstName}
+            name="firstname"
+            value={signupData.firstname}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded-lg"
           />
           <input
             type="text"
             placeholder="Last Name"
-            name="lastName"
-            value={signupData.lastName}
+            name="lastname"
+            value={signupData.lastname}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
+          />
+
+<input
+            type="phone"
+            placeholder=" Phone Number"
+            name="phone"
+            value={signupData.phone}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded-lg"
           />

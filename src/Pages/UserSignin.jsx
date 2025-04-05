@@ -18,7 +18,7 @@ function UserSignin() {
 
     try {
       const response = await axios.post(
-        "https://devclash-backend.onrender.com/api/auth/user-signin",
+        "https://devclash-backend.onrender.com/api/login",
         signinData
       );
 
