@@ -67,14 +67,12 @@ function TopNavBar() {
             </Link>
 
             <Link
-              to="/forum"
-              className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
-                         flex items-center space-x-1 px-3 py-2 rounded-lg
-                         relative group hover:translate-x-2"
+              to="/dashboard"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 block px-4 py-2"
             >
               
               <ArrowLeft className="h-3 w-4  transform rotate-[130deg] group-hover:mr-8 absolute left-0 opacity-0 top-1/2 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
-              Forum
+              Dashboard
              
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
