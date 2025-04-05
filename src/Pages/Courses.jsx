@@ -6,7 +6,6 @@ import LandingPage from '../Components/LandingPage';
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate(); // Initialize useNavigate
-  
 
   useEffect(() => {
     // Fetch courses from the backend
@@ -14,9 +13,9 @@ const Courses = () => {
       try {
         const response = await axios.get('https://devclash-backend.onrender.com/api/subject');
         setCourses(response.data); 
-        console.log("Mydata",response.data);
+        console.log("Mydata", response.data);
       } catch (error) {
-        console.error('Error fetching courses:', error);
+        console.error('Error fetching courses:', error);    
       }
     };
 
@@ -24,10 +23,15 @@ const Courses = () => {
   }, []);
 
   const handleLearnMore = (course) => {
-    console.log("Navigating to subject ID:", courses._id); // Debug log
+    console.log("Navigating to subject ID:", course._id); // Debug log
     navigate('/subcontent', { state: { subjectId: course._id } }); // Pass the subject ID
   };
   
+
+  const handlePreAssessment = (course) => {
+    console.log("Navigating to Pre-Assessment for course ID:", course._id); // Debug log
+    navigate('/preassessmenttest', { state: { subjectId: course._id } }); // Pass the subject ID if needed
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -40,7 +44,8 @@ const Courses = () => {
               title={course.name} // Course name from the backend
               description={course.tagline} // Tagline from the backend
               thumbnail={course.thumbnail} // Thumbnail image URL
-              onClick={() => handleLearnMore(course)} // Navigate to SubContent
+              onLearnMore={() => handleLearnMore(course)} // Navigate to SubContent
+              onPreAssessment={() => handlePreAssessment(course)} // Navigate to PreAssessment
             />
           ))}
         </div>

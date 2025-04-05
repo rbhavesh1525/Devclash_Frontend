@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
-import { Sparkles } from 'lucide-react';
+import { 
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, 
+  PieChart, Pie, Cell, Legend, LineChart, Line, Tooltip, Area,
+  AreaChart, ComposedChart
+} from 'recharts';
+import { Sparkles, CheckCircle, XCircle } from 'lucide-react';
 import { subjects } from './data';
 
 
@@ -25,27 +29,27 @@ const SubjectCard = ({ subject }) => {
       >
         <div className="flex flex-col items-center justify-center h-full">
           <div className="relative w-24 h-24 mb-4">
-            <svg className="w-full h-full" viewBox="0 0 36 36">
+            <svg className="w-full h-full" viewBox="0 0 72 72">
               <path
-                d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                d="M36 6
+                  a 30 30 0 0 1 0 60
+                  a 30 30 0 0 1 0 -60"
                 fill="none"
                 stroke="#E2E8F0"
-                strokeWidth="3"
+                strokeWidth="4"
               />
               <path
-                d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                d="M36 6
+                  a 30 30 0 0 1 0 60
+                  a 30 30 0 0 1 0 -60"
                 fill="none"
                 stroke="#F97316"
-                strokeWidth="3"
+                strokeWidth="4"
                 strokeDasharray={`${subject.progress}, 100`}
               />
               <text
-                x="18"
-                y="20.35"
+                x="36"
+                y="42"
                 className="fill-current text-lg font-semibold"
                 textAnchor="middle"
               >
@@ -70,6 +74,7 @@ const SubjectCard = ({ subject }) => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
+              <Tooltip />
               <Bar dataKey="progress" fill="#F97316" />
             </BarChart>
           </ResponsiveContainer>
@@ -81,12 +86,17 @@ const SubjectCard = ({ subject }) => {
 
 // MasteryChart Component
 const MasteryChart = ({ subjects }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
   const COLORS = ['#F97316', '#3730A3', '#059669'];
 
   const data = subjects.map(subject => ({
     name: subject.name,
     value: subject.progress,
   }));
+
+  const onPieEnter = (_, index) => {
+    setActiveIndex(index);
+  };
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-lg">
@@ -99,14 +109,21 @@ const MasteryChart = ({ subjects }) => {
               cx="50%"
               cy="50%"
               labelLine={false}
-              outerRadius={80}
+              outerRadius={activeIndex !== null ? 130 : 110}
               fill="#8884d8"
               dataKey="value"
+              onMouseEnter={onPieEnter}
+              onMouseLeave={() => setActiveIndex(null)}
             >
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell 
+                  key={`cell-${index}`} 
+                  fill={COLORS[index % COLORS.length]}
+                  opacity={activeIndex === index ? 1 : 0.8}
+                />
               ))}
             </Pie>
+            <Tooltip />
             <Legend />
           </PieChart>
         </ResponsiveContainer>
@@ -115,9 +132,73 @@ const MasteryChart = ({ subjects }) => {
   );
 };
 
+// SubjectsOverview Component
+const SubjectsOverview = ({ subjects }) => {
+  const [selectedSubject, setSelectedSubject] = useState(null);
+
+  const data = subjects.map(subject => ({
+    name: subject.name,
+    progress: subject.progress,
+  }));
+
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-lg">
+      <h2 className="text-2xl font-bold mb-6 text-center">Subjects Overview</h2>
+      <div className="h-[300px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <ComposedChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="progress" fill="#F97316" />
+            <Line type="monotone" dataKey="progress" stroke="#3730A3" />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+      
+      <div className="mt-8">
+        <h3 className="text-xl font-bold mb-4">Test Performance</h3>
+        <div className="flex flex-wrap gap-4">
+          {subjects.map(subject => (
+            <div key={subject.id} className="flex-1 min-w-[250px]">
+              <h4 className="font-semibold mb-2">{subject.name}</h4>
+              <div className="space-y-2">
+                {subject.tests.map((test, index) => (
+                  <div
+                    key={index}
+                    className={`flex items-center justify-between p-2 rounded-lg ${
+                      test.score >= 40 ? 'bg-green-50' : 'bg-red-50'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      {test.score >= 40 ? (
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                      ) : (
+                        <XCircle className="w-4 h-4 text-red-500" />
+                      )}
+                      <span className="text-sm font-medium">{test.name}</span>
+                    </div>
+                    <span
+                      className={`text-sm font-bold ${
+                        test.score >= 40 ? 'text-green-600' : 'text-red-600'
+                      }`}
+                    >
+                      {test.score}%
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Main Dashboard Screen Component
-function DashboardScreen  () {
-  // TODO: Replace with actual user data from API
+const DashboardScreen = () => {
   const studentName = "Alex";
 
   return (
@@ -149,9 +230,10 @@ function DashboardScreen  () {
           ))}
         </div>
 
-        {/* Mastery Chart */}
-        <div className="mb-12">
+        {/* Charts Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <MasteryChart subjects={subjects} />
+          <SubjectsOverview subjects={subjects} />
         </div>
       </div>
     </div>

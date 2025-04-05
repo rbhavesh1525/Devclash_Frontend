@@ -28,14 +28,20 @@ function UserSignin() {
       console.log("✅ User ID:", response.data.user._id);
   
       // Save login info to store
-      login(response.data.user, response.data.token, response.data.user._id);
+      login(response.data.user, response.data.token, response.data.user._id,response.data.user.className);
+<<<<<<< HEAD
+      console.log("Classname received",response.data.user.className);
+=======
+      console.log("cn in signin",response.data.user.className)
+
+>>>>>>> 6b53a60de6e01266fe8eaa4c6681e58956839c34
   
       showToast("🎉 Signin Successful!", "success");
       setMessage("Redirecting you to homepage");
   
       // Wait a bit before redirecting
       setTimeout(() => {
-        // window.location.href = "/";
+        window.location.href = "/";
       }, 3000);
     } catch (error) {
       console.error("❌ Unable to login:", error);
