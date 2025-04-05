@@ -15,31 +15,35 @@ function UserSignin() {
   const handleSignin = async (e) => {
     e.preventDefault();
     setMessage("");
-
+  
     try {
       const response = await axios.post(
         "https://devclash-backend.onrender.com/api/login",
         signinData
       );
-
-      console.log("Signin successful:", response.data);
-
-      login(response.data.user, response.data.token); // Use zustand login function
-      showToast(" 🎉 Signin Successful!", "success");
+  
+      
+      console.log("✅ Full Response:", response);
+      console.log("✅ Signin successful:", response.data);
+      console.log("✅ User ID:", response.data.user._id);
+  
+      // Save login info to store
+      login(response.data.user, response.data.token, response.data.user._id);
+  
+      showToast("🎉 Signin Successful!", "success");
       setMessage("Redirecting you to homepage");
-
-      // Redirect after successful login
+  
+      // Wait a bit before redirecting
       setTimeout(() => {
-        window.location.href = "/";
+        // window.location.href = "/";
       }, 3000);
     } catch (error) {
-      console.error("Unable to login:", error);
-
+      console.error("❌ Unable to login:", error);
       const errorMessage = error.response?.data?.message || "Signin failed";
-
       showToast(`❌ ${errorMessage}`, "error");
     }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;

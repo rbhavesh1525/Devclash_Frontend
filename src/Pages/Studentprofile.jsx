@@ -1,8 +1,9 @@
 'use client'
-
-import { useState } from "react"
+import axios from "axios"
+import { useState ,useEffect} from "react"
 import { motion } from "framer-motion"
 import { Camera } from 'lucide-react'
+import useAuthStore from "../Store/authStore"
 // import TopNavBar from "../Components/TopNavBar";
 
  function Studentprofile() {
@@ -10,9 +11,7 @@ import { Camera } from 'lucide-react'
 // After response:
 
 
-  const [profile, setProfile] = useState({
-    photo: null,
-  })
+
 
   const [profileinfo, setProfileInfo] = useState({
     firstname: "",
@@ -21,12 +20,6 @@ import { Camera } from 'lucide-react'
     bio: "",
   })
 
-  const handleFileChange = (e, type) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      setProfile(prev => ({ ...prev, [type]: file }))
-    }
-  }
 
 
   const handleOnChange =(e)=>{
@@ -37,44 +30,46 @@ setProfileInfo({
 })
   }
 
+  const studentid = useAuthStore((state) => state.studentid);
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    const formData = new FormData();
-  
-    // Append the text fields
-    formData.append("firstname", profileinfo.firstname);
-    formData.append("lastname", profileinfo.lastname);
-    formData.append("email", profileinfo.email);
-    formData.append("bio", profileinfo.bio);
-  
-    // Append the image file
-    if (profile.photo) {
-      formData.append("photo", profile.photo);
-    }
-  
-    try {
-      const res = await fetch("https://your-backend-url.com/api/profile", {
-        method: "POST",
-        body: formData,
-      });
-  
-      const data = await res.json();
-  
-      if (res.ok) {
-        console.log("Upload successful:", data);
-        setStatus("Profile uploaded successfully!");
-        // Optionally show success message or redirect
-      } else {
-        console.error("Upload failed:", data.message);
+console.log("student id coming",studentid)
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (!studentid) {
+        console.warn("studentid is missing!");
+        return;
       }
-    } catch (error) {
-      console.error("Error uploading profile:", error);
-    }
-  };
   
+      try {
+        const res = await axios.get(`http://localhost:3000/api/get-student-profile/${studentid}`);
+        console.log("Fetched student profile:", res.data);
+        setProfileInfo({
+          firstname: res.data.firstname || "",
+          lastname: res.data.lastname || "",
+          email: res.data.email || "",
+          bio: res.data.bio || "",
+        });
+      } catch (error) {
+        console.error("Error fetching profile:", error.response?.data || error.message);
+      }
+    };
+  
+    fetchProfile();
+  }, [studentid]);
+  
+
+
+
+
+  
+   
+  
+
+  
+  
+    
 
   return (
     <>
@@ -88,29 +83,17 @@ setProfileInfo({
       >
         <div className="relative w-full h-[200px] bg-gradient-to-r from-blue-100 to-amber-50"></div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={
+
+""
+        }>
           <div className="px-8 pb-8">
             <div className="flex justify-between items-center -mt-10 mb-8">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="relative w-32 h-32 rounded-full border-4 border-white bg-white shadow-lg overflow-hidden flex items-center justify-center"
               >
-                {profile.photo ? (
-                  <img
-                    src={URL.createObjectURL(profile.photo)}
-                    alt="Profile"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center' }}
-                  />
-                ) : (
-                  <span className="text-gray-400 text-xl">Profile</span>
-                )}
-                <input
-                  type="file"
-                  onChange={(e) => handleFileChange(e, 'photo')}
-                  className="absolute inset-0 opacity-0 cursor-pointer"
-                  accept="image/*"
-                />
+                
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   className="absolute bottom-0 right-0 p-4 shadow-md"
