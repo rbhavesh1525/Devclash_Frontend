@@ -5,6 +5,7 @@ import {TopNavBar} from "./Components/CompIndex"
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { Navigate } from "react-router-dom";
+import WeeklyTest from './Pages/WeeklyTest';
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
       <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /></>} />
       <Route path="/subcontent" element={<><TopNavBar/><SubContent /></>} />
+      <Route path='/weeklytest' element={<><TopNavBar/><WeeklyTest/></>}/>
       
     
     </Routes>
