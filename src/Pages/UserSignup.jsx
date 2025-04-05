@@ -20,7 +20,7 @@ function UserSignup() {
     setIsError("");
     
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/user-signup", signupData);
+      const response = await axios.post("https://devclash-backend.onrender.com/api/auth/user-signup", signupData);
       console.log("Signup successful:", response.data);
       showToast("🎉 Signup Successful!", "success");
       

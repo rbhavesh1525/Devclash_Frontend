@@ -1,7 +1,7 @@
 
 import './App.css'
 import {Homepage} from "./Pages/PageIndex"
-import {Navbar} from "./Components/CompIndex"
+import {Navbar,TopNavBar} from "./Components/CompIndex"
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { Navigate } from "react-router-dom";
@@ -13,10 +13,12 @@ function App() {
   return (
     <>
     <BrowserRouter>
+   
 
     <Routes>
+      
       <Route path='*' element={<Navigate  to="/"/>}/>
-      <Route path='/'element ={<><Navbar/><Homepage/></>}/>
+      <Route path='/'element ={<> <TopNavBar/><Homepage/></>}/>
       
     
     </Routes>
@@ -27,4 +29,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
