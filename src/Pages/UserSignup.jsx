@@ -13,6 +13,8 @@ function UserSignup() {
     phone:"",
     email: "",
     password: "",
+    className:"",
+    parentEmail : "",
   });
 
   const handleSignupSubmit = async (e) => {
@@ -69,13 +71,40 @@ function UserSignup() {
           />
 
 <input
-            type="phone"
+            type="tel"
             placeholder=" Phone Number"
             name="phone"
             value={signupData.phone}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded-lg"
           />
+
+<select
+  name="className"
+  value={signupData.className}
+  onChange={handleChange}
+  className="w-full p-2 border border-gray-300 rounded-lg"
+>
+  <option value="">Select your Standard</option>
+  <option value="Grade 6">Grade 6</option>
+  <option value="Grade 7">Grade 7</option>
+  <option value="Grade 8">Grade 8</option>
+  <option value="Grade 9">Grade 9</option>
+  <option value="Grade 10">Grade 10</option>
+  <option value="Grade 11">Grade 11</option>
+  <option value="Grade 12">Grade 12</option>
+</select>
+
+
+<input
+            type="email"
+            placeholder="Enter your parent Email"
+            name="parentEmail"
+            value={signupData.parentEmail}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
+          />
+          
           
           <input
             type="email"

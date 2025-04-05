@@ -42,14 +42,13 @@ function TopNavBar() {
     navigate('/homepage')
     
   }
-  
 
   return (
     <div className=" top-0 left-0 right-0 z-50">
       <div className="max-w-8xl mx-auto p-1">
         <div className="flex items-center justify-between px-8 py-5 bg-gray-200/30 backdrop-blur-[10px] rounded-full">
           
-          <div className="text-xl font-bold text-gray-800">EngineerStories</div>
+          <div className="text-xl font-bold text-gray-800">Edutech</div>
 
     
           <nav className="hidden lg:flex flex-grow justify-center items-center space-x-8">
@@ -134,7 +133,7 @@ function TopNavBar() {
               <>
               
             <Link
-              to="/login"
+              to="/user-signin"
               className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-500 ease-in-out
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"

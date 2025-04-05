@@ -1,6 +1,6 @@
 
 import './App.css'
-import {Homepage} from "./Pages/PageIndex"
+import {Homepage,Studentprofile,UserSignin,UserSignup} from "./Pages/PageIndex"
 import {Navbar,TopNavBar} from "./Components/CompIndex"
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
@@ -14,11 +14,14 @@ function App() {
     <>
     <BrowserRouter>
    
-
+    
     <Routes>
       
       <Route path='*' element={<Navigate  to="/"/>}/>
-      <Route path='/'element ={<> <TopNavBar/><Homepage/></>}/>
+      <Route path='/'element ={<><TopNavBar/><Homepage/></>}/>
+      <Route path='/user-signup' element={<><UserSignup/></>}/>
+      <Route path='/user-signin' element={<><UserSignin/></>}/>
+      <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
       
     
     </Routes>
