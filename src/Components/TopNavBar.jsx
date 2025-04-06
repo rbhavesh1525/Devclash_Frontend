@@ -12,7 +12,7 @@ function TopNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigate = useNavigate();
-  //PUSHING AGAIN
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -48,13 +48,13 @@ function TopNavBar() {
       <div className="max-w-8xl mx-auto p-1">
         <div className="flex items-center justify-between px-8 py-5 bg-gray-200/30 backdrop-blur-[10px] rounded-full">
           
-          <div className="text-xl font-bold text-gray-800">Edutech</div>
+          <div className="text-xl font-bold text-gray-800">Future Sathi</div>
 
     
           <nav className="hidden lg:flex flex-grow justify-center items-center space-x-8">
             <Link
               to="/homepage"
-              className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
+              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
@@ -62,6 +62,39 @@ function TopNavBar() {
               <ArrowLeft className="h-3 w-4 transform rotate-[130deg] mr-1 absolute right-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
               Home
           
+              <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
+            </Link>
+
+            <Link
+              to="/dashboard"
+<<<<<<< HEAD
+              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
+=======
+              className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
+>>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
+                         flex items-center space-x-1 px-3 py-2 rounded-lg
+                         relative group hover:translate-x-2"
+            >
+             
+              <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
+               Dashboard
+<<<<<<< HEAD
+=======
+           
+              <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
+            </Link>
+
+
+            <Link
+              to="/leaderboard"
+              className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
+                         flex items-center space-x-1 px-3 py-2 rounded-lg
+                         relative group hover:translate-x-2"
+            >
+             
+              <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
+               LeaderBoard
+           
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
 
@@ -76,24 +109,35 @@ function TopNavBar() {
              
               <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
                Dashboard
+>>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
            
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
             <Link
+<<<<<<< HEAD
+              to="/communication-practise"
+              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
+=======
               to="/weeklytest"
               className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
+>>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
              
               <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
+<<<<<<< HEAD
+               Communication Practise
+           
+=======
               Weekly test 
+>>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
 
             <Link
               to="/blogs"
-              className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
+              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
@@ -107,7 +151,7 @@ function TopNavBar() {
           
           <div className="flex items-center space-x-4">
             <button
-              className="lg:hidden p-2 text-gray-300 hover:text-gray-900"
+              className="lg:hidden p-2 text-gray-300 hover:bg-orange-600"
               onClick={toggleMobileMenu}
             >
               {isMobileMenuOpen ? (
@@ -123,7 +167,7 @@ function TopNavBar() {
               
             <Link
               to="/user-signin"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-500 ease-in-out
+              className="text-sm font-medium text-gray-700 hover:bg-orange-600 transition-all duration-500 ease-in-out
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
