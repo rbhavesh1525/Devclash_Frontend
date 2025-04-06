@@ -29,7 +29,7 @@ const useAuthStore = create((set) => ({
 
     console.log("Login Successful:", token);
     console.log("sid in store ",studentid)
-    console.log("classname is store",studentclass)
+    console.log("classname is store",studentclass);
   },
 
   // Logout function

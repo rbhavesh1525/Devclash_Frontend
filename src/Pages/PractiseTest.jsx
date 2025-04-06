@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 const PractiseTest = () => {
   const location = useLocation();
   const { moduleId } = location.state || {};
+  console.log(moduleId);
   const className = localStorage.getItem("studentclass");
   const [testid,setTestid]=useState();
 
@@ -18,6 +19,7 @@ const PractiseTest = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
+        console.log("hello")
       try {
         const response = await axios.get(`https://devclash-backend.onrender.com/api/test/by-module/${moduleId}`);
         console.log("Fetched response:", response.data);

@@ -1,13 +1,8 @@
 
 import './App.css'
 
-import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest,LeaderBoard} from "./Pages/PageIndex"
-
-import {ModuleLearningdata} from "./Pages/PageIndex"
+import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest,LeaderBoard,ModuleLearningdata} from "./Pages/PageIndex"
 import {TopNavBar , WelcomePage, LandingPage,Footer} from "./Components/CompIndex"
-//import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest} from "./Pages/PageIndex"
-//import {TopNavBar} from "./Components/CompIndex"
-
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { Navigate } from "react-router-dom";
@@ -38,17 +33,12 @@ function App() {
       <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
       <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /></>} />
       <Route path="/subcontent" element={<><TopNavBar/><SubContent /></>} />
-
-
-
       <Route path='/module-learning-data'  element={<><TopNavBar/><ModuleLearningdata/></>} />
-
-
       <Route path="/practisetest" element={<><TopNavBar/><PractiseTest /></>} />
       <Route path='/weeklytest' element={<><TopNavBar/><WeeklyTest/></>}/>
       <Route path='/leaderboard' element={<><TopNavBar/><LeaderBoard/></>}/>
 
-
+      
     
     </Routes>
     <ToastContainer position="top-right" autoClose={3000} />

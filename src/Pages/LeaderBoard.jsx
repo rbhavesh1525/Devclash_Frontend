@@ -6,64 +6,64 @@ const Leaderboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate fetching data from the backend
     const fetchLeaderboardData = async () => {
-      // Uncomment the following lines when the backend is ready
-      /*
+      const token = localStorage.getItem("token");
+
       try {
-        const response = await axios.get('https://your-api-url.com/api/leaderboard');
+        const response = await axios.get(
+          "https://devclash-backend.onrender.com/api/profile/leaderboard",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
         setLeaderboardData(response.data);
       } catch (error) {
         console.error('Error fetching leaderboard data:', error);
       } finally {
         setLoading(false);
       }
-      */
-
-      // Dummy data for demonstration
-      const dummyData = [
-        { _id: '1', name: 'Alice', totalScore: 95 },
-        { _id: '2', name: 'Bob', totalScore: 90 },
-        { _id: '3', name: 'Charlie', totalScore: 85 },
-        { _id: '4', name: 'David', totalScore: 80 },
-        { _id: '5', name: 'Eve', totalScore: 75 },
-      ];
-
-      setLeaderboardData(dummyData);
-      setLoading(false);
     };
 
     fetchLeaderboardData();
   }, []);
 
-  // Sort the data in descending order based on total score
-  const sortedData = [...leaderboardData].sort((a, b) => b.totalScore - a.totalScore);
-
   if (loading) {
-    return <div className="text-center">Loading...</div>;
+    return <div className="text-center py-10 text-gray-500 text-lg">Loading...</div>;
   }
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center text-orange-600 mb-8">Leaderboard</h1>
-      <table className="min-w-full bg-white border border-gray-300">
-        <thead>
-          <tr>
-            <th className="border-b-2 border-gray-300 p-4">Rank</th>
-            <th className="border-b-2 border-gray-300 p-4">Student Name</th>
-            <th className="border-b-2 border-gray-300 p-4">Total Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedData.map((student, index) => (
-            <tr key={student._id}>
-              <td className="border-b border-gray-300 p-4">{index + 1}</td>
-              <td className="border-b border-gray-300 p-4">{student.name}</td>
-              <td className="border-b border-gray-300 p-4">{student.totalScore}</td>
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-4xl font-extrabold text-center text-orange-600 mb-10">Leaderboard</h1>
+      <div className="overflow-x-auto shadow-lg rounded-xl border border-gray-200">
+        <table className="min-w-full text-sm text-left">
+          <thead className="bg-gray-100 text-gray-700 uppercase tracking-wider">
+            <tr>
+              <th className="px-6 py-4">Rank</th>
+              <th className="px-6 py-4">Student Name</th>
+              <th className="px-6 py-4 text-center">Total Score</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {leaderboardData.map((student, index) => (
+              <tr
+                key={student._id}
+                className="hover:bg-orange-50 transition duration-150"
+              >
+                <td className="px-6 py-4 font-medium text-gray-800">{index + 1}</td>
+                <td className="px-6 py-4 text-gray-700">
+                  {student.userId.firstname} {student.userId.lastname}
+                </td>
+                <td className="px-6 py-4 text-center text-gray-900 font-semibold">
+                  {student.totalScore}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

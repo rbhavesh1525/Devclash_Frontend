@@ -23,20 +23,20 @@ function Footer() {
         {/* Left - Contact Info */}
         <div className="space-y-2">
           <h2 className="font-bold text-lg leading-tight">
-            Kingdom <br /> Domain <br /> College
+            Future Sathi
           </h2>
           <p className="text-sm font-semibold">
-            <span className="font-bold">ADDRESS:</span> 9719 LINCOLN VILLAGE DR SUITE 600<br />
-            SACRAMENTO, CA 95827
+            <span className="font-bold">ADDRESS:</span> Pune , Maharashtra, India<br />
+            
           </p>
-          <p className="text-sm"><span className="font-bold">PHONE:</span> (916) 472-0847</p>
-          <p className="text-sm"><span className="font-bold">EMAIL:</span> INFO@KDCGLOBAL.ORG</p>
+          <p className="text-sm"><span className="font-bold">PHONE:</span> (91)-8999937124</p>
+          <p className="text-sm"><span className="font-bold">EMAIL:</span> futuresathi.@gmail.com</p>
         </div>
 
         {/* Right - Link Columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-sm text-gray-800">
           <div>
-            <h3 className="font-bold mb-2">ABOUT</h3>
+            <h3 className="font-bold mb-2"> </h3>
             <ul className="space-y-1">
               <li>Vision</li>
               <li>Culture</li>
@@ -74,7 +74,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-xs mt-10 text-gray-700">
-        ©2023 <span className="font-bold">KINGDOM DOMAIN COLLEGE</span>. ALL RIGHTS RESERVED.
+        ©2025 <span className="font-bold">DYP & MMCOE</span>. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

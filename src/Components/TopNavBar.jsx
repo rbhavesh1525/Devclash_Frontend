@@ -54,7 +54,7 @@ function TopNavBar() {
           <nav className="hidden lg:flex flex-grow justify-center items-center space-x-8">
             <Link
               to="/homepage"
-              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
+              className="text-sm text-gray-900 transition-all duration-500 ease-in-out
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
@@ -91,21 +91,6 @@ function TopNavBar() {
            
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
-
-        
-
-            <Link
-              to="/dashboard"
-              className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
-                         flex items-center space-x-1 px-3 py-2 rounded-lg
-                         relative group hover:translate-x-2"
-            >
-             
-              <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
-               Dashboard
-           
-              <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
-            </Link>
             <Link
               to="/weeklytest"
               className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
@@ -120,7 +105,7 @@ function TopNavBar() {
 
             <Link
               to="/blogs"
-              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
+              className="text-sm text-gray-900 transition-all duration-500 ease-in-out
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
@@ -182,7 +167,7 @@ function TopNavBar() {
                       <X className="h-4 w-4" />
                     </button>
                     <Link
-                      to="/profile"
+                      to="/student-profile"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Profile
