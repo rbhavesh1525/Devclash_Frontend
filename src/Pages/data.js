@@ -20,7 +20,7 @@ export const subjects = [
   },
   {
     id: '2',
-    name: 'Physics',
+    name: 'Technology',
     progress: 45,
     icon: Atom.toString(),
     subtopics: [
@@ -37,7 +37,24 @@ export const subjects = [
   },
   {
     id: '3',
-    name: 'Chemistry',
+    name: 'Engineering',
+    progress: 60,
+    icon: FlaskConical.toString(),
+    subtopics: [
+      { name: 'Organic', progress: 70 },
+      { name: 'Inorganic', progress: 55 },
+      { name: 'Physical', progress: 55 },
+    ],
+    tests: [
+      { name: 'Test 1', score: 15 },
+      { name: 'Test 2', score: 82 },
+      { name: 'Test 3', score: 79 },
+      { name: 'Test 4', score: 85 },
+    ]
+  },
+  {
+    id: '4',
+    name: 'Science',
     progress: 60,
     icon: FlaskConical.toString(),
     subtopics: [
