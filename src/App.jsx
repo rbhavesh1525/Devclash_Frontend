@@ -29,14 +29,14 @@ function App() {
       
       <Route path='/user-signup' element={<><UserSignup/></>}/>
       <Route path='/user-signin' element={<><UserSignin/></>}/>
-      <Route path='/preassessmenttest' element={<><TopNavBar/><PreAssessmentTest/></>}/>
-      <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
-      <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /></>} />
-      <Route path="/subcontent" element={<><TopNavBar/><SubContent /></>} />
-      <Route path='/module-learning-data'  element={<><TopNavBar/><ModuleLearningdata/></>} />
+      <Route path='/preassessmenttest' element={<><TopNavBar/><PreAssessmentTest/><Footer/></>}/>
+      <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/><Footer/></>}></Route>
+      <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /><Footer/></>} />
+      <Route path="/subcontent" element={<><TopNavBar/><SubContent /><Footer/></>} />
+      <Route path='/module-learning-data'  element={<><TopNavBar/><ModuleLearningdata/><Footer/></>} />
       <Route path="/practisetest" element={<><TopNavBar/><PractiseTest /></>} />
       <Route path='/weeklytest' element={<><TopNavBar/><WeeklyTest/></>}/>
-      <Route path='/leaderboard' element={<><TopNavBar/><LeaderBoard/></>}/>
+      <Route path='/leaderboard' element={<><TopNavBar/><LeaderBoard/><Footer/></>}/>
 
       
     
