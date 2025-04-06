@@ -55,11 +55,12 @@ const SubContent = () => {
       <h2 className="text-2xl font-semibold mb-4">Resources</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {moduleData.map((module) => (
+            
           <div key={module._id} className="bg-white rounded-lg shadow-lg p-4 flex flex-col">
             <h3 className="text-xl font-semibold mb-2">{module.name}</h3>
             <button
               className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg"
-              onClick={() => navigate('/module-learning-data', { state: {modelid:module._id, modulename: module.name, subject_Id: subjectId } })}
+              onClick={() => navigate(`/module-learning-data?moduleid=${module._id}`, { state: {modelid:module._id, modulename: module.name, subject_Id: subjectId } })}
             >
               Practice Module
             </button>

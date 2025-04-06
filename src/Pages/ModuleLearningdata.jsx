@@ -6,13 +6,17 @@ import axios from 'axios';
 import PractiseTest from "./PractiseTest";
 
 function ModuleLearningdata() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  const moduleId = searchParams.get("moduleid");
+console.log(moduleId)
   
   const navigate = useNavigate(); 
-  const location = useLocation();
-  const { modelid,modulename, subject_Id } = location.state || {}; // Safely access state
+  const { modulename, subject_Id } = location.state || {}; // Safely access state
   console.log("Module Name:", modulename);
   console.log("Subject ID:", subject_Id);
-  console.log("Module ID:",modelid)
+ 
   
   const className = localStorage.getItem("studentclass");
   const [moduleData, setModuleData] = useState([]); // Initialize as an array
@@ -121,7 +125,7 @@ function ModuleLearningdata() {
             {console.log("mazi-id",moduleData)}
             <button
               className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg"
-              onClick={() => navigate('/practisetest',{ state: { moduleId: moduleData.id, subject_Id: subject_Id } })}
+              onClick={() => navigate('/practisetest',{ state: { moduleId: moduleId, subject_Id: subject_Id } })}
             >
               Practice Module
             </button>
