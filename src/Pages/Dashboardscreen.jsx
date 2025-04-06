@@ -199,7 +199,7 @@ const SubjectsOverview = ({ subjects }) => {
 
 // Main Dashboard Screen Component
 const DashboardScreen = () => {
-  const studentName = "Alex";
+  const studentName = "Tanmay";
 
   return (
     <div className="min-h-screen bg-gray-50">

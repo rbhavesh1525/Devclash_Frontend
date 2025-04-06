@@ -23,14 +23,14 @@ function Footer() {
         {/* Left - Contact Info */}
         <div className="space-y-2">
           <h2 className="font-bold text-lg leading-tight">
-            Future Sathi
+            Skillora
           </h2>
           <p className="text-sm font-semibold">
             <span className="font-bold">ADDRESS:</span> Pune , Maharashtra, India<br />
             
           </p>
           <p className="text-sm"><span className="font-bold">PHONE:</span> (91)-8999937124</p>
-          <p className="text-sm"><span className="font-bold">EMAIL:</span> futuresathi.@gmail.com</p>
+          <p className="text-sm"><span className="font-bold">EMAIL:</span> skillora.@gmail.com</p>
         </div>
 
         {/* Right - Link Columns */}

@@ -112,7 +112,10 @@ console.log(moduleId)
                   frameBorder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                ></iframe>
+                >
+                  
+                </iframe>
+                
               </div>
             ))}
           </div>
@@ -129,9 +132,12 @@ console.log(moduleId)
             >
               Practice Module
             </button>
+            <br></br>
+            <br></br>
             <hr></hr>
+            <br></br>
             <a
-              href="https://www.englishspeakingexample.com/article-communication" // Replace with your article route
+              href="https://study.com/academy/lesson/communication-skills-definition-examples.html" // Replace with your article route
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 underline text-lg hover:text-blue-800 transition cursor-pointer"

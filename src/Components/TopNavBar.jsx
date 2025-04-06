@@ -48,7 +48,7 @@ function TopNavBar() {
       <div className="max-w-8xl mx-auto p-1">
         <div className="flex items-center justify-between px-8 py-5 bg-gray-200/30 backdrop-blur-[10px] rounded-full">
           
-          <div className="text-xl font-bold text-gray-800">Future Sathi</div>
+          <div className="text-xl font-bold text-gray-800">Skillora</div>
 
     
           <nav className="hidden lg:flex flex-grow justify-center items-center space-x-8">

@@ -30,7 +30,7 @@ const Courses = () => {
 
   const handlePreAssessment = (course) => {
     console.log("Navigating to Pre-Assessment for course ID:", course._id); // Debug log
-    navigate('/preassessmenttest', { state: { subjectId: course._id } }); // Pass the subject ID if needed
+    navigate('/modeltest', { state: { subjectId: course._id } }); // Pass the subject ID if needed
   };
 
   return (
