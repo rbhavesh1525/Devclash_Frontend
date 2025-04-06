@@ -1,22 +1,29 @@
 
 import './App.css'
-<<<<<<< HEAD
-import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,ModuleLearningdata} from "./Pages/PageIndex"
+import { useEffect } from 'react'
+import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,ModuleLearningdata,CommunicationPractise,UpcomingTestCountdown, Upcomingtest} from "./Pages/PageIndex"
 import {TopNavBar , WelcomePage, LandingPage,Footer} from "./Components/CompIndex"
-=======
-import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest} from "./Pages/PageIndex"
-import {TopNavBar} from "./Components/CompIndex"
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
+import {PractiseTest} from "./Pages/PageIndex"
+
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { Navigate } from "react-router-dom";
 import WeeklyTest from './Pages/WeeklyTest';
 
 
+import {Sidebar,InstructorHome,InstructorNavbar,InstructorSignIn,InstructorSignUp,CreateQpaper,UploadVideo} from "./Instructor/InstructorIndex"
+
+
+
+import useInstructorAuthStore from "./Store/InstructorAuthStore";
 
 
 
 function App() {
+  useEffect(() => {
+    console.log("🔁 Loading from localStorage");
+    useInstructorAuthStore.getState().loadFromLocalStorage();
+  }, []);
   
   
 
@@ -37,15 +44,26 @@ function App() {
       <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
       <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /></>} />
       <Route path="/subcontent" element={<><TopNavBar/><SubContent /></>} />
-<<<<<<< HEAD
       <Route path='/module-learning-data'  element={<><TopNavBar/><ModuleLearningdata/></>} />
-=======
-<<<<<<< HEAD
       <Route path="/practisetest" element={<><TopNavBar/><PractiseTest /></>} />
-=======
       <Route path='/weeklytest' element={<><TopNavBar/><WeeklyTest/></>}/>
->>>>>>> 6b53a60de6e01266fe8eaa4c6681e58956839c34
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
+
+    <Route  path="/communication-practise" element={<> <TopNavBar/><CommunicationPractise/></>} />
+
+
+
+    <Route   path='/instructor-homepage' element={<><Sidebar/><InstructorNavbar/><InstructorHome/></>} />
+    <Route   path='/instructor-signup' element={<><InstructorSignUp/></>}/>
+    <Route path='/instructor-signin' element={<><InstructorSignIn/></>}/>
+
+    <Route  path='/instructor-qpaper' element={<><CreateQpaper/></>}/>
+
+    <Route  path="/upcoming-test-countdown" element ={<><TopNavBar/><UpcomingTestCountdown/></>} />
+    
+    <Route  path='/upcoming-test' element={<><TopNavBar/><Upcomingtest/></>}/>
+
+    <Route  path='/upload-video' element={<><UploadVideo/></>} />
+    
       
     
     </Routes>

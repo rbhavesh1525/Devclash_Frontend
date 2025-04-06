@@ -23,7 +23,7 @@ function Footer() {
         {/* Left - Contact Info */}
         <div className="space-y-2">
           <h2 className="font-bold text-lg leading-tight">
-            Kingdom <br /> Domain <br /> College
+            Path <br /> 2 <br /> Learn
           </h2>
           <p className="text-sm font-semibold">
             <span className="font-bold">ADDRESS:</span> 9719 LINCOLN VILLAGE DR SUITE 600<br />
@@ -55,9 +55,9 @@ function Footer() {
           <div>
             <h3 className="font-bold mb-2">ACADEMICS</h3>
             <ul className="space-y-1">
-              <li>1st Year</li>
-              <li>2nd Year</li>
-              <li>3rd Year</li>
+              <li>6th Grade</li>
+              <li>7th Grade</li>
+              <li>8th Grade</li>
               <li>All Academics</li>
             </ul>
           </div>
@@ -74,7 +74,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-xs mt-10 text-gray-700">
-        ©2023 <span className="font-bold">KINGDOM DOMAIN COLLEGE</span>. ALL RIGHTS RESERVED.
+        ©2025 <span className="font-bold">Skillora</span>. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

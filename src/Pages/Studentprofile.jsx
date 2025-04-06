@@ -43,7 +43,7 @@ console.log("student id coming",studentid)
       }
   
       try {
-        const res = await axios.get(`http://localhost:3000/api/get-student-profile/${studentid}`);
+        const res = await axios.get(`https://devclash-backend.onrender.com/api/get-student-profile/${studentid}`);
         console.log("Fetched student profile:", res.data);
         setProfileInfo({
           firstname: res.data.firstname || "",
@@ -74,10 +74,7 @@ console.log("student id coming",studentid)
       >
         <div className="relative w-full h-[200px] bg-gradient-to-r from-blue-100 to-amber-50"></div>
 
-        <form onSubmit={
-
-""
-        }>
+        <form onSubmit={""   }>
           <div className="px-8 pb-8">
             <div className="flex justify-between items-center -mt-10 mb-8">
               <motion.div
