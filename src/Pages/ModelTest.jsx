@@ -27,7 +27,7 @@ const WarningPopup = ({ onOk }) => (
   </div>
 );
 
-const WeeklyTest = () => {
+const ModelTest = () => {
   const className = localStorage.getItem("studentclass");
   const userId = localStorage.getItem("studentid");
   const token = localStorage.getItem("token");
@@ -415,7 +415,7 @@ const WeeklyTest = () => {
         <WarningPopup onOk={enterFullscreen} />
       )}
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold text-center text-orange-600 mb-8">📝 Weekly-Assessment Test</h1>
+        <h1 className="text-3xl font-bold text-center text-orange-600 mb-8">📝 Pre-Assessment Test</h1>
         <motion.div
           className="bg-white rounded-2xl shadow-lg p-6 transition-all"
           whileHover={{ scale: 1.02 }}
@@ -452,4 +452,4 @@ const WeeklyTest = () => {
   );
 };
 
-export default WeeklyTest;
+export default ModelTest;

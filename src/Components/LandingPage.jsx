@@ -35,7 +35,7 @@ function LandingPage() {
     transition={{ duration: 0.6 }}
     className="text-xl text-orange-500 font-semibold font-serif tracking-wide"
   >
-    Future Sathi will make it easy
+    Skillora will make it easy
   </motion.p>
   <motion.div
   variants={container}

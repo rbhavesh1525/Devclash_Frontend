@@ -12,8 +12,8 @@ const PreAssessmentTest = () => {
     // Fetch questions from the backend
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/questions'); // Adjust the URL as needed
-        setQuestions(response.data);
+        const response = await axios.get('https://devclash-backend.onrender.com/api/questions'); // Adjust the URL as needed
+        setQuestions("my data",response.data);
       } catch (error) {
         console.error('Error fetching questions:', error);
       }

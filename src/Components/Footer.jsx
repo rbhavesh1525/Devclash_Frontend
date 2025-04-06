@@ -23,50 +23,53 @@ function Footer() {
         {/* Left - Contact Info */}
         <div className="space-y-2">
           <h2 className="font-bold text-lg leading-tight">
-            Path <br /> 2 <br /> Learn
+            Skillora
           </h2>
           <p className="text-sm font-semibold">
-            <span className="font-bold">ADDRESS:</span> 9719 LINCOLN VILLAGE DR SUITE 600<br />
-            SACRAMENTO, CA 95827
+            <span className="font-bold">ADDRESS:</span> Pune , Maharashtra, India<br />
+            
           </p>
-          <p className="text-sm"><span className="font-bold">PHONE:</span> (916) 472-0847</p>
-          <p className="text-sm"><span className="font-bold">EMAIL:</span> INFO@KDCGLOBAL.ORG</p>
+          <p className="text-sm"><span className="font-bold">PHONE:</span> (91)-8999937124</p>
+          <p className="text-sm"><span className="font-bold">EMAIL:</span> skillora.@gmail.com</p>
         </div>
 
         {/* Right - Link Columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-sm text-gray-800">
-          <div>
-            <h3 className="font-bold mb-2">ABOUT</h3>
+          <div className="mt-8">
+            <h3 className="font-bold mb-2"> </h3>
             <ul className="space-y-1">
-              <li>Vision</li>
-              <li>Culture</li>
-              <li>Instructors</li>
+              <a href=""><li>Vision</li></a>
+              <a href=""><li>Culture</li></a>
+              <a href=""><li>Instructors</li></a>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-2">ADMISSIONS</h3>
             <ul className="space-y-1">
-              <li>Finances</li>
-              <li>How To Pay</li>
-              <li>Calendar</li>
-              <li>Apply Now</li>
+            <a href=""><li>Finances</li></a>
+            <a href=""><li>How To Pay</li></a>
+            <a href=""><li>Calendar</li></a>
+            <a href=""><li>Apply Now</li></a>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-2">ACADEMICS</h3>
             <ul className="space-y-1">
-              <li>6th Grade</li>
-              <li>7th Grade</li>
-              <li>8th Grade</li>
-              <li>All Academics</li>
+            <a href=""><li>6 Grade</li></a>
+            <a href=""> <li>7 Grade</li></a>
+            <a href=""> <li>8 Grade</li></a>
+            <a href=""> <li>9 Grade</li></a>
+            <a href=""> <li>10 Grade</li></a>
+            <a href=""> <li>11 Grade</li></a>
+            <a href=""><li>12 Grade</li></a>
             </ul>
           </div>
           <div>
             <h3 className="font-bold mb-2">STUDENT LIFE</h3>
             <ul className="space-y-1">
-              <li>Sacramento Living</li>
-              <li>Stories & News</li>
-              <li>Student Handbook</li>
+            <a href=""><li>Sacramento Living</li></a>
+            <a href=""><li>Stories & News</li></a>
+            <a href=""><li>Student Handbook</li></a>
             </ul>
           </div>
         </div>
@@ -74,7 +77,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-xs mt-10 text-gray-700">
-        ©2025 <span className="font-bold">Skillora</span>. ALL RIGHTS RESERVED.
+        ©2025 <span className="font-bold">DYP & MMCOE</span>. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

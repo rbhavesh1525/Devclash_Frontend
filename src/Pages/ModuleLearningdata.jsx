@@ -1,30 +1,81 @@
 import { useEffect, useState } from "react";
-import TopNavBar from "../Components/TopNavBar";
+import { useLocation } from "react-router-dom";
+import useAuthStore from "../Store/authStore";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import PractiseTest from "./PractiseTest";
+
 function ModuleLearningdata() {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  const moduleId = searchParams.get("moduleid");
+console.log(moduleId)
+  
+  const navigate = useNavigate(); 
+  const { modulename, subject_Id } = location.state || {}; // Safely access state
+  console.log("Module Name:", modulename);
+  console.log("Subject ID:", subject_Id);
+ 
+  
+  const className = localStorage.getItem("studentclass");
+  const [moduleData, setModuleData] = useState([]); // Initialize as an array
+  const [loading, setLoading] = useState(true);
+  
+  
   const [data, setData] = useState({
     article: "",
     videos: [],
   });
   const [mainVideo, setMainVideo] = useState("");
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const grade = useAuthStore((state) => state.studentclass);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = {
-        article: "https://www.englishspeakingexample.com/article-communication",
-        videos: [
-          "https://www.youtube.com/embed/d0yGdNEWdn0",
-          "https://www.youtube.com/embed/G3e-cpL7ofc",
-          "https://www.youtube.com/embed/EyPfdp5dSnA",
-        ],
-      };
-      setData(response);
-      setMainVideo(response.videos[0]); // Default main video
-    };
-    fetchData();
-  }, []);
+      try {
+        const response = await fetch(`https://devclash-backend.onrender.com/api/videos/${modulename}/${grade}`);
+        const result = await response.json();
 
-  
+        // Assuming the API response structure matches the provided example
+        setData({
+          article: "https://www.englishspeakingexample.com/article-communication", // Replace with your article route
+          videos: result.videos.map(video => `https://www.youtube.com/embed/${video.videoId}`), // Embed URLs
+        });
+        setMainVideo(`https://www.youtube.com/embed/${result.videos[0].videoId}`); // Default main video
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    if (modulename && grade) { // Ensure modulename and grade are defined before fetching
+      fetchData();
+    }
+  }, [modulename, grade]);
+
+  useEffect(() => {
+    const fetchModuleData = async () => {
+      if (!subject_Id || !className) {
+        console.error("No subject ID or class name provided");
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const response = await axios.get(`https://devclash-backend.onrender.com/api/module/${subject_Id}/${className}`);
+        console.log("API Response:", response.data); // Log the response data
+        setModuleData(response.data);
+        console.log("mazadata",moduleData) // Set the response data directly
+
+      } catch (error) {
+        console.error('Error fetching module data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchModuleData();
+  }, [subject_Id]);
 
   return (
     <div className="p-6 md:p-10 bg-gradient-to-br bg-gray-200 rounded-2xl shadow-2xl min-h-screen">
@@ -61,7 +112,10 @@ function ModuleLearningdata() {
                   frameBorder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                ></iframe>
+                >
+                  
+                </iframe>
+                
               </div>
             ))}
           </div>
@@ -71,8 +125,19 @@ function ModuleLearningdata() {
         <div className="md:w-1/2 flex flex-col justify-between bg-white rounded-xl shadow-lg p-6 space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-purple-700 mb-4">Article</h2>
+            {console.log("mazi-id",moduleData)}
+            <button
+              className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg"
+              onClick={() => navigate('/practisetest',{ state: { moduleId: moduleId, subject_Id: subject_Id } })}
+            >
+              Practice Module
+            </button>
+            <br></br>
+            <br></br>
+            <hr></hr>
+            <br></br>
             <a
-              href={data.article}
+              href="https://study.com/academy/lesson/communication-skills-definition-examples.html" // Replace with your article route
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 underline text-lg hover:text-blue-800 transition cursor-pointer"
@@ -110,4 +175,4 @@ function ModuleLearningdata() {
   );
 }
 
-export default ModuleLearningdata;
+export default ModuleLearningdata;  

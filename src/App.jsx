@@ -1,10 +1,8 @@
 
 import './App.css'
 import { useEffect } from 'react'
-import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,ModuleLearningdata,CommunicationPractise,UpcomingTestCountdown, Upcomingtest} from "./Pages/PageIndex"
-import {TopNavBar , WelcomePage, LandingPage,Footer} from "./Components/CompIndex"
-import {PractiseTest} from "./Pages/PageIndex"
-
+import {Studentprofile,UserSignin,UserSignup,Courses,PreAssessmentTest,DashboardScreen,SubContent,PractiseTest,LeaderBoard,ModuleLearningdata,ModelTest} from "./Pages/PageIndex"
+import {TopNavBar , WelcomePage, LandingPage,Footer,FloatingChatLauncher} from "./Components/CompIndex"
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import { ToastContainer } from "react-toastify";
 import { Navigate } from "react-router-dom";
@@ -36,34 +34,30 @@ function App() {
       
       <Route path='*' element={<Navigate  to="/"/>}/>
       <Route path='/' element={<><WelcomePage/></>}  />
-      <Route path='/homepage'element ={<><TopNavBar/> <LandingPage/><Courses/> <Footer/></>}/>
+      <Route path='/homepage'element ={<><TopNavBar/> <LandingPage/><Courses/><FloatingChatLauncher/> <Footer/></>}/>
       
       <Route path='/user-signup' element={<><UserSignup/></>}/>
       <Route path='/user-signin' element={<><UserSignin/></>}/>
-      <Route path='/preassessmenttest' element={<><TopNavBar/><PreAssessmentTest/></>}/>
-      <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/></>}></Route>
-      <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /></>} />
-      <Route path="/subcontent" element={<><TopNavBar/><SubContent /></>} />
-      <Route path='/module-learning-data'  element={<><TopNavBar/><ModuleLearningdata/></>} />
+      <Route path='/preassessmenttest' element={<><TopNavBar/><PreAssessmentTest/><Footer/></>}/>
+      <Route path='/student-profile' element={<><TopNavBar/><Studentprofile/><Footer/></>}></Route>
+      <Route path="/dashboard" element={<><TopNavBar/><DashboardScreen /><Footer/></>} />
+      <Route path="/subcontent" element={<><TopNavBar/><SubContent /><Footer/></>} />
+      <Route path='/module-learning-data'  element={<><TopNavBar/><ModuleLearningdata/><Footer/></>} />
       <Route path="/practisetest" element={<><TopNavBar/><PractiseTest /></>} />
       <Route path='/weeklytest' element={<><TopNavBar/><WeeklyTest/></>}/>
+      <Route path='/modeltest' element={<><TopNavBar/><ModelTest/></>}/>
+      
+      <Route path='/leaderboard' element={<><TopNavBar/><LeaderBoard/><Footer/></>}/>
 
-    <Route  path="/communication-practise" element={<> <TopNavBar/><CommunicationPractise/></>} />
+      <Route path='/instruct-homepage' element={<><InstructorNavbar/><Sidebar/><InstructorHome/></>} />
+
+      <Route path='/instruct-signin' element={<><InstructorSignIn/></>} />
+      <Route path='/instruct-signup' element={<><InstructorSignUp/></>} />
+      <Route path='/instructor-qpaper' element={<><CreateQpaper/></>}/>
+      <Route path='/upload-video' element={<><UploadVideo/></>} />
 
 
 
-    <Route   path='/instructor-homepage' element={<><Sidebar/><InstructorNavbar/><InstructorHome/></>} />
-    <Route   path='/instructor-signup' element={<><InstructorSignUp/></>}/>
-    <Route path='/instructor-signin' element={<><InstructorSignIn/></>}/>
-
-    <Route  path='/instructor-qpaper' element={<><CreateQpaper/></>}/>
-
-    <Route  path="/upcoming-test-countdown" element ={<><TopNavBar/><UpcomingTestCountdown/></>} />
-    
-    <Route  path='/upcoming-test' element={<><TopNavBar/><Upcomingtest/></>}/>
-
-    <Route  path='/upload-video' element={<><UploadVideo/></>} />
-    
       
     
     </Routes>
