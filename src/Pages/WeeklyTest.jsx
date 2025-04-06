@@ -303,7 +303,10 @@ const WeeklyTest = () => {
             📚 Recommended Learning Resources
           </h2>
           {videoResources.map((resource, index) => (
+            
+          
             <div key={index} className="mb-8">
+              {console.log("My videos:",videoResources)}
               <h3 className="text-xl font-semibold mb-4 text-orange-600">
                 {resource.topic}
               </h3>
