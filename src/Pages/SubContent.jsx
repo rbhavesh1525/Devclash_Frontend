@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
+import ModuleLearningdata from './ModuleLearningdata';
 
 const SubContent = () => {
   const location = useLocation();
   const navigate = useNavigate(); // Initialize useNavigate
   const { subjectId } = location.state || {}; // Get the subject ID from the state
+  console.log("ys subid",subjectId);
   const className = localStorage.getItem("studentclass");
 
   const [moduleData, setModuleData] = useState([]); // Initialize as an array
@@ -47,6 +49,7 @@ const SubContent = () => {
   }
 
   return (
+    <>
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-center text-orange-600 mb-8">Modules</h1>
       <h2 className="text-2xl font-semibold mb-4">Resources</h2>
@@ -56,14 +59,23 @@ const SubContent = () => {
             <h3 className="text-xl font-semibold mb-2">{module.name}</h3>
             <button
               className="mt-4 bg-orange-500 text-white px-4 py-2 rounded-lg"
-              onClick={() => navigate('/practisetest', { state: { moduleId: module._id, resources: module.resources } })}
+              onClick={() => navigate('/module-learning-data', { state: {modelid:module._id, modulename: module.name, subject_Id: subjectId } })}
             >
               Practice Module
             </button>
           </div>
+          
         ))}
       </div>
+      
     </div>
+    
+    
+
+    
+    </>
+    
+
   );
 };
 

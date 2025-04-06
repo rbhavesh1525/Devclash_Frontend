@@ -43,7 +43,7 @@ console.log("student id coming",studentid)
       }
   
       try {
-        const res = await axios.get(`http://localhost:3000/api/get-student-profile/${studentid}`);
+        const res = await axios.get(`https://devclash-backend.onrender.com/api/get-student-profile/${studentid}`);
         console.log("Fetched student profile:", res.data);
         setProfileInfo({
           firstname: res.data.firstname || "",

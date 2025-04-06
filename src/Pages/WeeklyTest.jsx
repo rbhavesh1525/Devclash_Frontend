@@ -83,7 +83,6 @@ const WeeklyTest = () => {
         'https://devclash-backend.onrender.com/api/profile/test-completed',
         {
           userId,
-          className,
           testId,
           testScore,
         },
