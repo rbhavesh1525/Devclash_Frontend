@@ -101,7 +101,7 @@ const WeeklyTest = () => {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get(
-          `https://devclash-backend.onrender.com/api/test/weekly/${className}`
+          https://devclash-backend.onrender.com/api/test/weekly/${className}
         );
         if (response.data.success && response.data.tests.length > 0) {
           const test = response.data.tests[0];
@@ -178,7 +178,7 @@ const WeeklyTest = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: Bearer ${token},
           },
         }
       );
@@ -208,10 +208,10 @@ const WeeklyTest = () => {
   const renderFormattedFeedback = (text) => {
     if (!text) return null;
     
-    const parts = text.split(/(\*\*.*?\*\*)/g);
+    const parts = text.split(/(\\.?\\*)/g);
   
     return parts.map((part, index) => {
-      if (part.startsWith("**") && part.endsWith("**")) {
+      if (part.startsWith("") && part.endsWith("")) {
         return (
           <div key={index} className="mt-2">
             <strong className="font-bold text-gray-900">{part.slice(2, -2)}</strong>
@@ -231,7 +231,7 @@ const WeeklyTest = () => {
       transition={{ duration: 0.2 }}
     >
       <a
-        href={`https://www.youtube.com/watch?v=${video.videoId}`}
+        href={https://www.youtube.com/watch?v=${video.videoId}}
         target="_blank"
         rel="noopener noreferrer"
         className="block"
@@ -303,7 +303,10 @@ const WeeklyTest = () => {
             📚 Recommended Learning Resources
           </h2>
           {videoResources.map((resource, index) => (
+            
+          
             <div key={index} className="mb-8">
+              {console.log("My videos:",videoResources)}
               <h3 className="text-xl font-semibold mb-4 text-orange-600">
                 {resource.topic}
               </h3>
