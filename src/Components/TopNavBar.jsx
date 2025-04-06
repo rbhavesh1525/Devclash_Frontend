@@ -215,31 +215,31 @@ function TopNavBar() {
                 <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-1" />
               </Link>
               <Link
-                to="/forum"
+                to="/dashboard"
                 className="text-sm text-gray-700 hover:text-gray-900 transition-all duration-500 ease-in-out
                            flex items-center space-x-1 px-3 py-2 rounded-lg hover:translate-x-2"
               >
                 <ArrowLeft className="h-3 w-4 transform rotate-[130deg] ml-1 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
-                Forum
+                Dashboard
                 <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-1" />
               </Link>
               <Link
-                to="/chat"
+                to="/leaderboard"
                 className="text-sm text-gray-700 hover:text-gray-900 transition-all duration-500 ease-in-out
                            flex items-center space-x-1 px-3 py-2 rounded-lg hover:translate-x-2"
               >
                 <ArrowLeft className="h-3 w-4 transform rotate-[130deg] ml-1 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
-                Stranger Chat
+            Learder Board
                 <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-1" />
               </Link>
 
               <Link
-                to="/about"
+                to="/weeklytest"
                 className="text-sm text-gray-700 hover:text-gray-900 transition-all duration-500 ease-in-out
                            flex items-center space-x-1 px-3 py-2 rounded-lg hover:translate-x-2"
               >
                 <ArrowLeft className="h-3 w-4 transform rotate-[130deg] ml-1 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
-                About us 
+                Weekly Test
                 <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-1" />
               </Link>
 
@@ -249,7 +249,7 @@ function TopNavBar() {
                            flex items-center space-x-1 px-3 py-2 rounded-lg hover:translate-x-2"
               >
                 <ArrowLeft className="h-3 w-4 transform rotate-[130deg] ml-1 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
-                About us 
+                Blogs
                 <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-1" />
               </Link>
             </nav>

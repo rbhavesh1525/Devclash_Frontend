@@ -154,11 +154,16 @@ const PractiseTest = () => {
 
   const sendResult = async () => {
     const token = localStorage.getItem("token");
+    console.log("tokes is ",token)
+    console.log(testId);
+    console.log(testScore);
 
     try {
       await axios.post(
         'https://devclash-backend.onrender.com/api/profile/test-completed',
         {
+          token,
+
           testId,
           testScore,
         },
