@@ -67,19 +67,13 @@ function TopNavBar() {
 
             <Link
               to="/dashboard"
-<<<<<<< HEAD
-              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
-=======
               className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
              
               <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
                Dashboard
-<<<<<<< HEAD
-=======
            
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
@@ -109,29 +103,18 @@ function TopNavBar() {
              
               <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
                Dashboard
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
            
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
             <Link
-<<<<<<< HEAD
-              to="/communication-practise"
-              className="text-sm text-gray-900 hover:bg-orange-600 transition-all duration-500 ease-in-out
-=======
               to="/weeklytest"
               className="text-sm text-gray-900 hover:text-gray-900 transition-all duration-500 ease-in-out
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
                          flex items-center space-x-1 px-3 py-2 rounded-lg
                          relative group hover:translate-x-2"
             >
              
               <ArrowLeft className="h-3 w-4 transform rotate-[130deg] group-hover:mr-2 absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out top-1/2" />
-<<<<<<< HEAD
-               Communication Practise
-           
-=======
               Weekly test 
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
               <ArrowRight className="h-3 w-4 transform -rotate-[50deg] mr-0 absolute right-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
             </Link>
 

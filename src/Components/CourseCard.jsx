@@ -2,16 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes
 import { motion } from 'framer-motion';
 
-<<<<<<< HEAD
-
-
-
-const CourseCard = ({ title, description, thumbnail, onClick }) => {
-
- 
-=======
 const CourseCard = ({ title, description, thumbnail, onLearnMore, onPreAssessment }) => {
->>>>>>> 7657a4b70f9479b5427a47b6b7f26de275cce588
   return (
     <section id="courses">
     <motion.div
